@@ -1,13 +1,3 @@
-# BOT PUSH DISCORD x GEMINI AI
-## Creator : SHARE IT HUB
-
-## TELEGRAM CHANNEL : [ SHARE IT HUB](https://t.me/SHAREITHUB_COM)
-
-## YOUTUBE CHANNEL : [ SHARE IT HUB](https://youtube.com/@shareithub_com)
-
-## TUTORIAL VIDEO : https://youtu.be/bodHaUgROlo
-
-## FEATURE :
 
 1. Multi accounts
 
@@ -51,6 +41,3 @@ nano .env
 
 ## DONE. U CAN RUN BOT `python3 bot.py` 
 
-
-Goto here to get token discord :
-https://youtu.be/Wdexc__Cja0

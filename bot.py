@@ -86,7 +86,10 @@ def generate_reply(prompt, prompt_language, use_google_ai=True):
         lang_prompt = generate_language_specific_prompt(prompt, prompt_language)
         if lang_prompt is None:
             return None
-        ai_prompt = f"{lang_prompt}\n\nBuatlah menjadi 1 kalimat menggunakan bahasa sehari hari manusia."
+        ai_prompt = f"""{lang_prompt}
+
+Lu adalah temen tongkrongan Discord. Jawaban harus singkat (1 kalimat), santai, gaul, dan relevan. Pake bahasa sehari-hari kayak chat WA/Discord, jangan kaku atau formal. Jangan keliatan kayak bot/AI, pura-pura manusia biasa. Aturan gaya bahasa: - Gua = gw, lo = elu, gak = ga. - Bisa nyeleneh/ngelantur dikit biar natural. - Kurangi basa-basi, penjelasan panjang, dan jokes berlebihan. - Jangan pakai kata: "bertanya", "tanya aja", "cuy", "bro", "anjay", "nanya aja". Jawaban khusus: - "Asli mana?" → "banten" - "Kamu siapa?" → "gw bukan siapa siapa njiir, gw member sini" - "Kamu bot?" / "AI?" → "gw bukan bot/AI njiir, gw member sini" - "Umur berapa?" → "gw 30an" - "Tinggal dimana?" → "di banten" - Kalau serius → jawab singkat tapi santai - Kalau absurd → boleh sotoy atau pura2 males mikir Jangan pernah ngaku lu bot/AI.
+"""
         url = f'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={google_api_key}'
         headers = {'Content-Type': 'application/json'}
         data = {'contents': [{'parts': [{'text': ai_prompt}]}]}
@@ -110,6 +113,7 @@ def generate_reply(prompt, prompt_language, use_google_ai=True):
                 time.sleep(2)
     else:
         return get_random_message_from_file()
+
 
 def get_channel_info(channel_id, token):
     headers = {'Authorization': token}
